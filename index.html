@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="pageTitle">Cognitive Accessibility Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="sticky-nav">
+        <div class="nav-container">
+            <a href="#hero" class="nav-link active" data-i18n="navHome">Home</a>
+            <a href="#about" class="nav-link" data-i18n="navAbout">About</a>
+            <a href="#labs" class="nav-link" data-i18n="navLabs">Labs</a>
+            <a href="#testimonials" class="nav-link" data-i18n="navTestimonials">Testimonials</a>
+            <a href="#faq" class="nav-link" data-i18n="navFaq">FAQ</a>
+            
+            <button id="lang-toggle" class="lang-btn" aria-label="Toggle language">
+                <span class="lang-text">EN</span> / <span class="lang-text text-dim">ES</span>
+            </button>
+        </div>
+        <div id="progress-bar"></div>
+    </nav>
+
+    <main>
+        <section id="hero" class="section">
+            <div class="content-wrapper">
+                <h1 data-i18n="heroTitle">Clarity Through Design</h1>
+                <p class="subtitle" data-i18n="heroSubtitle">Experience a digital space where cognitive load is minimized and user control is paramount. Seamless, lightning-fast, and inclusive.</p>
+                <a href="#about" class="btn primary-btn" data-i18n="heroCta">Explore the Concept</a>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <details open class="accordion">
+                <summary>
+                    <h2 data-i18n="aboutTitle">About the Initiative</h2>
+                    <span class="icon"></span>
+                </summary>
+                <div class="details-content">
+                    <div class="content-wrapper">
+                        <p data-i18n="aboutP1">Our mission is to build digital environments that respect the user's attention. By leveraging native HTML semantic elements like details and summary, we create manageable chunks of information.</p>
+                        <p data-i18n="aboutP2">This prevents visual overwhelm and empowers users to reveal content only when they are ready to process it.</p>
+                    </div>
+                </div>
+            </details>
+        </section>
+
+        <section id="labs" class="section">
+            <details open class="accordion">
+                <summary>
+                    <h2 data-i18n="labsTitle">Research Labs</h2>
+                    <span class="icon"></span>
+                </summary>
+                <div class="details-content">
+                    <div class="content-wrapper">
+                        <div class="grid">
+                            <div class="card">
+                                <h3 data-i18n="labsCard1Title">Typography</h3>
+                                <p data-i18n="labsCard1Desc">High-contrast, highly legible fonts reduce reading fatigue.</p>
+                            </div>
+                            <div class="card">
+                                <h3 data-i18n="labsCard2Title">Spatial Layout</h3>
+                                <p data-i18n="labsCard2Desc">Generous whitespace provides necessary visual breathing room.</p>
+                            </div>
+                            <div class="card">
+                                <h3 data-i18n="labsCard3Title">Predictability</h3>
+                                <p data-i18n="labsCard3Desc">Consistent navigation and state retention build trust.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        </section>
+
+        <section id="testimonials" class="section">
+            <details class="accordion">
+                <summary>
+                    <h2 data-i18n="testTitle">User Voices</h2>
+                    <span class="icon"></span>
+                </summary>
+                <div class="details-content">
+                    <div class="content-wrapper">
+                        <blockquote class="testimonial">
+                            <p data-i18n="testQuote1">"Finally, a website that doesn't bombard me with everything all at once. The instant language switch is like magic."</p>
+                            <footer data-i18n="testAuthor1">— Elena R., Accessibility Advocate</footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </details>
+        </section>
+
+        <section id="faq" class="section">
+            <details class="accordion">
+                <summary>
+                    <h2 data-i18n="faqTitle">Frequently Asked Questions</h2>
+                    <span class="icon"></span>
+                </summary>
+                <div class="details-content">
+                    <div class="content-wrapper faq-list">
+                        <div class="faq-item">
+                            <h3 data-i18n="faqQ1">Is this built with a framework?</h3>
+                            <p data-i18n="faqA1">No. It uses strictly vanilla HTML, CSS, and JavaScript for maximum performance and zero dependency overhead.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3 data-i18n="faqQ2">How does the language toggle work?</h3>
+                            <p data-i18n="faqA2">It leverages a simple JavaScript dictionary mapped to data attributes in the HTML. It swaps text instantly without making any network requests.</p>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p data-i18n="footerText">&copy; 2026 Cognitive Accessibility Demo. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
