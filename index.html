@@ -7,43 +7,54 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Fraunces:opsz,wght@9..144,400;9..144,700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="sticky-nav">
+        <div id="progress-wrapper">
+            <div id="progress-bar"></div>
+            <div id="read-time-indicator"><span id="read-percent">0%</span> • <span id="read-mins"></span></div>
+        </div>
         <div class="nav-container">
             <a href="#hero" class="nav-link active" data-i18n="navHome">Home</a>
             <a href="#about" class="nav-link" data-i18n="navAbout">About</a>
             <a href="#labs" class="nav-link" data-i18n="navLabs">Labs</a>
             <a href="#testimonials" class="nav-link" data-i18n="navTestimonials">Testimonials</a>
+            <a href="#tech" class="nav-link" data-i18n="navTech">Tech</a>
             <a href="#faq" class="nav-link" data-i18n="navFaq">FAQ</a>
             
             <div class="nav-controls">
                 <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
                     <span id="theme-icon">🌙</span>
                 </button>
-                <button id="lang-toggle" class="lang-btn" aria-label="Toggle language">
-                    <span class="lang-text">EN</span> / <span class="lang-text text-dim">ES</span>
-                </button>
+                <div class="lang-toggle-pill" id="lang-toggle" role="button" tabindex="0" aria-label="Toggle language">
+                    <span class="lang-opt active" data-lang="en">EN</span>
+                    <span class="lang-opt" data-lang="es">ES</span>
+                </div>
             </div>
         </div>
-        <div id="progress-bar"></div>
     </nav>
 
-    <main>
+    <main id="main-content">
         <section id="hero" class="section">
+            <div class="hero-bg"></div>
             <div class="content-wrapper">
                 <h1 data-i18n="heroTitle">Clarity Through Design</h1>
                 <p class="subtitle" data-i18n="heroSubtitle">Experience a digital space where cognitive load is minimized and user control is paramount. Seamless, lightning-fast, and inclusive.</p>
+                <p class="subtitle" data-i18n="heroSubtitle2">A demonstration of long-scroll navigation built for neurodivergent users — with active section tracking, instant bilingual switching, and full user control.</p>
                 <a href="#about" class="btn primary-btn" data-i18n="heroCta">Explore the Concept</a>
             </div>
         </section>
 
-        <section id="about" class="section">
+        <section id="about" class="section fade-section">
+            <div class="accordion-label" data-i18n="accordionLabel">Expand to read more — or collapse what you don't need</div>
             <details open class="accordion">
                 <summary>
-                    <h2 data-i18n="aboutTitle">About the Initiative</h2>
-                    <span class="icon"></span>
+                    <div>
+                        <div class="section-tag" data-i18n="tagAbout">// 01 — About</div>
+                        <h2 data-i18n="aboutTitle">About the Initiative</h2>
+                    </div>
+                    <span class="icon chevron"></span>
                 </summary>
                 <div class="details-content">
                     <div class="content-wrapper">
@@ -54,11 +65,14 @@
             </details>
         </section>
 
-        <section id="labs" class="section">
+        <section id="labs" class="section fade-section">
             <details open class="accordion">
                 <summary>
-                    <h2 data-i18n="labsTitle">Research Labs</h2>
-                    <span class="icon"></span>
+                    <div>
+                        <div class="section-tag" data-i18n="tagLabs">// 02 — Labs</div>
+                        <h2 data-i18n="labsTitle">Research Labs</h2>
+                    </div>
+                    <span class="icon chevron"></span>
                 </summary>
                 <div class="details-content">
                     <div class="content-wrapper">
@@ -81,28 +95,62 @@
             </details>
         </section>
 
-        <section id="testimonials" class="section">
+        <section id="testimonials" class="section fade-section">
             <details class="accordion">
                 <summary>
-                    <h2 data-i18n="testTitle">User Voices</h2>
-                    <span class="icon"></span>
+                    <div>
+                        <div class="section-tag" data-i18n="tagTest">// 03 — Voices</div>
+                        <h2 data-i18n="testTitle">User Voices</h2>
+                    </div>
+                    <span class="icon chevron"></span>
                 </summary>
                 <div class="details-content">
                     <div class="content-wrapper">
-                        <blockquote class="testimonial">
-                            <p data-i18n="testQuote1">"Finally, a website that doesn't bombard me with everything all at once. The instant language switch is like magic."</p>
-                            <footer data-i18n="testAuthor1">— Elena R., Accessibility Advocate</footer>
-                        </blockquote>
+                        <div class="grid">
+                            <blockquote class="testimonial card">
+                                <p data-i18n="testQuote1">"Finally, a website that doesn't bombard me with everything all at once. The instant language switch is like magic."</p>
+                                <footer data-i18n="testAuthor1">— Elena R., Accessibility Advocate / ADHD</footer>
+                            </blockquote>
+                            <blockquote class="testimonial card">
+                                <p data-i18n="testQuote2">"The clear typography and lack of forced animations make this the most readable site I've visited today."</p>
+                                <footer data-i18n="testAuthor2">— Marcus T., Dyslexia Advocate</footer>
+                            </blockquote>
+                        </div>
                     </div>
                 </div>
             </details>
         </section>
 
-        <section id="faq" class="section">
+        <section id="tech" class="section fade-section">
             <details class="accordion">
                 <summary>
-                    <h2 data-i18n="faqTitle">Frequently Asked Questions</h2>
-                    <span class="icon"></span>
+                    <div>
+                        <div class="section-tag" data-i18n="tagTech">// 04 — Tech</div>
+                        <h2 data-i18n="techTitle">How This Was Built</h2>
+                    </div>
+                    <span class="icon chevron"></span>
+                </summary>
+                <div class="details-content">
+                    <div class="content-wrapper">
+                        <ul class="tech-list">
+                            <li><strong data-i18n="tech1Title">IntersectionObserver:</strong> <span data-i18n="tech1Desc">Powers the scroll-aware navigation tracking for lower overhead than scroll listeners.</span></li>
+                            <li><strong data-i18n="tech2Title">JSON Dictionary:</strong> <span data-i18n="tech2Desc">Provides instant client-side localization without page reloads.</span></li>
+                            <li><strong data-i18n="tech3Title">Semantic HTML:</strong> <span data-i18n="tech3Desc">Uses native details and summary for accessible, JS-free accordions.</span></li>
+                            <li><strong data-i18n="tech4Title">CSS Custom Properties:</strong> <span data-i18n="tech4Desc">Supports seamless dark mode switching and respects system preferences.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </details>
+        </section>
+
+        <section id="faq" class="section fade-section">
+            <details class="accordion">
+                <summary>
+                    <div>
+                        <div class="section-tag" data-i18n="tagFaq">// 05 — FAQ</div>
+                        <h2 data-i18n="faqTitle">Frequently Asked Questions</h2>
+                    </div>
+                    <span class="icon chevron"></span>
                 </summary>
                 <div class="details-content">
                     <div class="content-wrapper faq-list">
@@ -114,6 +162,14 @@
                             <h3 data-i18n="faqQ2">How does the language toggle work?</h3>
                             <p data-i18n="faqA2">It leverages a simple JavaScript dictionary mapped to data attributes in the HTML. It swaps text instantly without making any network requests.</p>
                         </div>
+                        <div class="faq-item">
+                            <h3 data-i18n="faqQ3">What about users who prefer less motion?</h3>
+                            <p data-i18n="faqA3">The site respects the 'prefers-reduced-motion' media query, automatically disabling scroll animations for those who need it.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3 data-i18n="faqQ4">Are these custom fonts accessible?</h3>
+                            <p data-i18n="faqA4">Yes. We use Atkinson Hyperlegible, a font specifically designed by the Braille Institute to differentiate common ambiguous characters.</p>
+                        </div>
                     </div>
                 </div>
             </details>
@@ -122,6 +178,7 @@
 
     <footer class="site-footer">
         <p data-i18n="footerText">&copy; 2026 Cognitive Accessibility Demo. All rights reserved.</p>
+        <p class="footer-note" data-i18n="footerNote">Code delivered to GitHub — commented, documented, handoff-ready</p>
     </footer>
 
     <script src="app.js"></script>
